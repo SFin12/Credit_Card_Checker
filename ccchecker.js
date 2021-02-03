@@ -24,6 +24,7 @@ const batch = [valid1, valid2, valid3, valid4, valid5, invalid1, invalid2, inval
 
 
 // Add your functions below:
+// check if credit card is valid
 const validateCred = arr => {
     reversedArr = arr.reverse();
     numbersToSum = []
@@ -43,6 +44,7 @@ const validateCred = arr => {
         return (summedNums % 10 === 0 ? true : false)        
     };
 
+//check what credit cards are invalid from a list of credit cards
 const findValidCard = arrOfarrs => {
     invalidArrs = []
     arrOfarrs.forEach(arr => {
@@ -53,7 +55,7 @@ const findValidCard = arrOfarrs => {
     return invalidArrs
 };
 
-
+//show what companies sent invalid credit cards
 idInvalidCardCompanies = arrOfarrs => {
     invalidArr = findValidCard(arrOfarrs);
     companies = []
@@ -73,5 +75,5 @@ idInvalidCardCompanies = arrOfarrs => {
     companies = new Set(companies)
     return [...companies]
 }   
-
+//check results
 console.log(idInvalidCardCompanies(batch))
